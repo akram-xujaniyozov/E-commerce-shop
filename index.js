@@ -6,6 +6,8 @@ const cors = require('cors')
 app.use(bodyParser.json())
 app.use(cors())
 
+const port = 3001;
+
 let categories = ["smartphones","laptops","fragrances","skincare","groceries","home-decoration"]
 let products = {
     products: [
@@ -643,5 +645,5 @@ app.get('/api/category', (req,res)=> {
     res.send(categories)
 })
 
-app.listen(3001);
+app.listen(proccess.env.PORT || port);
 console.log('Express started on port 3001');
